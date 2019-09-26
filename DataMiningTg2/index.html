@@ -1,0 +1,916 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Tugas 2 - Data Mining</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#e91e63">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="pink" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#mengukur-jarak-data" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Data Mining" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Data Mining
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Tugas 2
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Data Mining" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Data Mining
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Tugas 2
+      </label>
+    
+    <a href="./" title="Tugas 2" class="md-nav__link md-nav__link--active">
+      Tugas 2
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mengukur-jarak-tipe-numerik" class="md-nav__link">
+    Mengukur Jarak Tipe Numerik
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tugas-ii-mengukur-jarak-pada-data-real" class="md-nav__link">
+    Tugas II (Mengukur Jarak pada Data Real)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agar-mempermudah-penghitungan-data-maka-jenis-data-di-identifikasi-terlebih-dahulu" class="md-nav__link">
+    Agar mempermudah penghitungan data maka jenis data di identifikasi terlebih dahulu
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saya-menuliskan-index-dari-kolom" class="md-nav__link">
+    Saya menuliskan index dari kolom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-numeric" class="md-nav__link">
+    Jarak Numeric
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pada-penghitungan-data-kali-ini-saya-memakai-chord-distance" class="md-nav__link">
+    Pada Penghitungan Data kali ini saya memakai Chord Distance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-ordinal" class="md-nav__link">
+    Jarak Ordinal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-categorical" class="md-nav__link">
+    Jarak Categorical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-binary" class="md-nav__link">
+    Jarak Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-campuran" class="md-nav__link">
+    Jarak Campuran
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pada-data-yang-saya-ambil-tidak-memiliki-missing-value-sehingga-nilai-delta-1" class="md-nav__link">
+    Pada Data yang saya ambil tidak memiliki missing value sehingga nilai delta = 1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jarak-jumlah-jarak-setiap-jenisjumlah-jenis" class="md-nav__link">
+    Jarak = Jumlah Jarak setiap jenis/Jumlah Jenis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../DataMiningTg3/" title="Tugas 3" class="md-nav__link">
+      Tugas 3
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mengukur-jarak-tipe-numerik" class="md-nav__link">
+    Mengukur Jarak Tipe Numerik
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tugas-ii-mengukur-jarak-pada-data-real" class="md-nav__link">
+    Tugas II (Mengukur Jarak pada Data Real)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agar-mempermudah-penghitungan-data-maka-jenis-data-di-identifikasi-terlebih-dahulu" class="md-nav__link">
+    Agar mempermudah penghitungan data maka jenis data di identifikasi terlebih dahulu
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saya-menuliskan-index-dari-kolom" class="md-nav__link">
+    Saya menuliskan index dari kolom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-numeric" class="md-nav__link">
+    Jarak Numeric
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pada-penghitungan-data-kali-ini-saya-memakai-chord-distance" class="md-nav__link">
+    Pada Penghitungan Data kali ini saya memakai Chord Distance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-ordinal" class="md-nav__link">
+    Jarak Ordinal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-categorical" class="md-nav__link">
+    Jarak Categorical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-binary" class="md-nav__link">
+    Jarak Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarak-campuran" class="md-nav__link">
+    Jarak Campuran
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pada-data-yang-saya-ambil-tidak-memiliki-missing-value-sehingga-nilai-delta-1" class="md-nav__link">
+    Pada Data yang saya ambil tidak memiliki missing value sehingga nilai delta = 1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jarak-jumlah-jarak-setiap-jenisjumlah-jenis" class="md-nav__link">
+    Jarak = Jumlah Jarak setiap jenis/Jumlah Jenis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mengukur-jarak-data">Mengukur Jarak Data</h1>
+<h2 id="mengukur-jarak-tipe-numerik">Mengukur Jarak Tipe Numerik</h2>
+<pre><code class="python">from IPython.display import Image,display;
+display(Image(filename=&quot;d1.PNG&quot;))
+display(Image(filename=&quot;d2.PNG&quot;))
+display(Image(filename=&quot;d3.PNG&quot;))
+display(Image(filename=&quot;d4.PNG&quot;))
+display(Image(filename=&quot;d5.PNG&quot;))
+display(Image(filename=&quot;d6.PNG&quot;))
+</code></pre>
+
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_2_0.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_2_1.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_2_2.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_2_3.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_2_4.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_2_5.png" /></p>
+<h3 id="tugas-ii-mengukur-jarak-pada-data-real">Tugas II (Mengukur Jarak pada Data Real)</h3>
+<pre><code class="python">from scipy import stats
+import pandas as pd
+</code></pre>
+
+<pre><code class="python">df = pd.read_csv('Teaching Assistant Evaluation Data Set.csv')
+a=df.iloc[13:17]
+a
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Whether of not the TA is a native English speaker</th>
+      <th>Course instructor</th>
+      <th>Course</th>
+      <th>Summer or regular semester</th>
+      <th>Class size</th>
+      <th>Class attribute</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13</th>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>17.0</td>
+      <td>2.0</td>
+      <td>39.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>17.0</td>
+      <td>2.0</td>
+      <td>42.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>17.0</td>
+      <td>2.0</td>
+      <td>43.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2.0</td>
+      <td>7.0</td>
+      <td>11.0</td>
+      <td>2.0</td>
+      <td>10.0</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="agar-mempermudah-penghitungan-data-maka-jenis-data-di-identifikasi-terlebih-dahulu">Agar mempermudah penghitungan data maka jenis data di identifikasi terlebih dahulu</h3>
+<h6 id="saya-menuliskan-index-dari-kolom">Saya menuliskan index dari kolom</h6>
+<pre><code class="python">binary=[0,3]
+ordinal=[5]
+num=[4]
+categorical=[1,2]
+</code></pre>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Ordinal&quot;]+[&quot;Categorical&quot;]+[&quot;Binary&quot;],
+    [&quot;v1-v2&quot;]+[0]+[0]+[0]+[0]+[0],
+    [&quot;v1-v3&quot;]+[0]+[0]+[0]+[0]+[0],
+    [&quot;v1-v4&quot;]+[0]+[0]+[0]+[0]+[0],
+    [&quot;v2-v3&quot;]+[0]+[0]+[0]+[0]+[0],
+    [&quot;v2-v4&quot;]+[0]+[0]+[0]+[0]+[0],
+    [&quot;v3-v4&quot;]+[0]+[0]+[0]+[0]+[0],
+    ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>Data </td><td>Jarak</td><td>Numeric</td><td>Ordinal</td><td>Categorical</td><td>Binary</td></tr>
+<tr><td>v1-v2</td><td>0    </td><td>0      </td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v1-v3</td><td>0    </td><td>0      </td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v1-v4</td><td>0    </td><td>0      </td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v2-v3</td><td>0    </td><td>0      </td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v2-v4</td><td>0    </td><td>0      </td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v3-v4</td><td>0    </td><td>0      </td><td>0      </td><td>0          </td><td>0     </td></tr>
+</tbody>
+</table>
+
+<h3 id="jarak-numeric">Jarak Numeric</h3>
+<h4 id="pada-penghitungan-data-kali-ini-saya-memakai-chord-distance">Pada Penghitungan Data kali ini saya memakai Chord Distance</h4>
+<pre><code class="python">def chordDist(v1,v2,jnis):
+    jmlh=0
+    normv1=0
+    normv2=0
+    for x in range (len(jnis)):
+        normv1=normv1+(int(a.values.tolist()[v1][jnis[x]])**2)
+        normv2=normv2+(int(a.values.tolist()[v2][jnis[x]])**2)
+        jmlh=jmlh+(int(a.values.tolist()[v1][jnis[x]])*int(a.values.tolist()[v2][jnis[x]]))
+    return ((2-(2*jmlh/(normv1*normv2)))**0.5)
+</code></pre>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Ordinal&quot;]+[&quot;Categorical&quot;]+[&quot;Binary&quot;],
+    [&quot;v1-v2&quot;]+[0]+[chordDist(0,1,num)]+[0]+[0]+[0],
+    [&quot;v1-v3&quot;]+[0]+[chordDist(0,2,num)]+[0]+[0]+[0],
+    [&quot;v1-v4&quot;]+[0]+[chordDist(0,3,num)]+[0]+[0]+[0],
+    [&quot;v2-v3&quot;]+[0]+[chordDist(1,2,num)]+[0]+[0]+[0],
+    [&quot;v2-v4&quot;]+[0]+[chordDist(1,3,num)]+[0]+[0]+[0],
+    [&quot;v3-v4&quot;]+[0]+[chordDist(2,3,num)]+[0]+[0]+[0],
+    ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>Data </td><td>Jarak</td><td>Numeric           </td><td>Ordinal</td><td>Categorical</td><td>Binary</td></tr>
+<tr><td>v1-v2</td><td>0    </td><td>1.413781807344754 </td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v1-v3</td><td>0    </td><td>1.4137918496568833</td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v1-v4</td><td>0    </td><td>1.412399304329974 </td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v2-v3</td><td>0    </td><td>1.4138219761652913</td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v2-v4</td><td>0    </td><td>1.4125289714685838</td><td>0      </td><td>0          </td><td>0     </td></tr>
+<tr><td>v3-v4</td><td>0    </td><td>1.412568170818422 </td><td>0      </td><td>0          </td><td>0     </td></tr>
+</tbody>
+</table>
+
+<h3 id="jarak-ordinal">Jarak Ordinal</h3>
+<pre><code class="python">display(Image(filename=&quot;d12.PNG&quot;))
+display(Image(filename=&quot;d13.PNG&quot;))
+</code></pre>
+
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_14_0.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_14_1.png" /></p>
+<pre><code class="python">def ordDist(v1,v2,jns):
+    jmlh=0
+    for x in range (len(jns)):
+        z1=int(a.values.tolist()[v1][jns[x]])-1
+        z2=int(a.values.tolist()[v2][jns[x]])-1
+        jmlh=jmlh+chordDist(z1,z2,jns)
+    return (jmlh)
+</code></pre>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Ordinal&quot;]+[&quot;Categorical&quot;]+[&quot;Binary&quot;],
+    [&quot;v1-v2&quot;]+[0]+[chordDist(0,1,num)]+[ordDist(0,1,ordinal)]+[0]+[0],
+    [&quot;v1-v3&quot;]+[0]+[chordDist(0,2,num)]+[ordDist(0,2,ordinal)]+[0]+[0],
+    [&quot;v1-v4&quot;]+[0]+[chordDist(0,3,num)]+[ordDist(0,3,ordinal)]+[0]+[0],
+    [&quot;v2-v3&quot;]+[0]+[chordDist(1,2,num)]+[ordDist(1,2,ordinal)]+[0]+[0],
+    [&quot;v2-v4&quot;]+[0]+[chordDist(1,3,num)]+[ordDist(1,3,ordinal)]+[0]+[0],
+    [&quot;v3-v4&quot;]+[0]+[chordDist(2,3,num)]+[ordDist(2,3,ordinal)]+[0]+[0],
+    ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>Data </td><td>Jarak</td><td>Numeric           </td><td>Ordinal          </td><td>Categorical</td><td>Binary</td></tr>
+<tr><td>v1-v2</td><td>0    </td><td>1.413781807344754 </td><td>1.224744871391589</td><td>0          </td><td>0     </td></tr>
+<tr><td>v1-v3</td><td>0    </td><td>1.4137918496568833</td><td>1.224744871391589</td><td>0          </td><td>0     </td></tr>
+<tr><td>v1-v4</td><td>0    </td><td>1.412399304329974 </td><td>1.224744871391589</td><td>0          </td><td>0     </td></tr>
+<tr><td>v2-v3</td><td>0    </td><td>1.4138219761652913</td><td>1.224744871391589</td><td>0          </td><td>0     </td></tr>
+<tr><td>v2-v4</td><td>0    </td><td>1.4125289714685838</td><td>1.224744871391589</td><td>0          </td><td>0     </td></tr>
+<tr><td>v3-v4</td><td>0    </td><td>1.412568170818422 </td><td>1.224744871391589</td><td>0          </td><td>0     </td></tr>
+</tbody>
+</table>
+
+<h3 id="jarak-categorical">Jarak Categorical</h3>
+<pre><code class="python">display(Image(filename=&quot;d9.PNG&quot;))
+display(Image(filename=&quot;d10.PNG&quot;))
+display(Image(filename=&quot;d11.PNG&quot;))
+</code></pre>
+
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_18_0.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_18_1.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_18_2.png" /></p>
+<pre><code class="python">def categoricalDist(v1,v2,jnis):
+    jmlh=0
+    for x in range (len(jnis)):
+        if (a.values.tolist()[v1][jnis[x]])!=(a.values.tolist()[v2][jnis[x]]):
+            jmlh=jmlh+1
+    return (jmlh)
+</code></pre>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Ordinal&quot;]+[&quot;Categorical&quot;]+[&quot;Binary&quot;],
+    [&quot;v1-v2&quot;]+[0]+[chordDist(0,1,num)]+[ordDist(0,1,ordinal)]+[categoricalDist(0,1,categorical)]+[0],
+    [&quot;v1-v3&quot;]+[0]+[chordDist(0,2,num)]+[ordDist(0,2,ordinal)]+[categoricalDist(0,2,categorical)]+[0],
+    [&quot;v1-v4&quot;]+[0]+[chordDist(0,3,num)]+[ordDist(0,3,ordinal)]+[categoricalDist(0,3,categorical)]+[0],
+    [&quot;v2-v3&quot;]+[0]+[chordDist(1,2,num)]+[ordDist(1,2,ordinal)]+[categoricalDist(1,2,categorical)]+[0],
+    [&quot;v2-v4&quot;]+[0]+[chordDist(1,3,num)]+[ordDist(1,3,ordinal)]+[categoricalDist(1,3,categorical)]+[0],
+    [&quot;v3-v4&quot;]+[0]+[chordDist(2,3,num)]+[ordDist(2,3,ordinal)]+[categoricalDist(2,3,categorical)]+[0],
+    ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>Data </td><td>Jarak</td><td>Numeric           </td><td>Ordinal          </td><td>Categorical</td><td>Binary</td></tr>
+<tr><td>v1-v2</td><td>0    </td><td>1.413781807344754 </td><td>1.224744871391589</td><td>0          </td><td>0     </td></tr>
+<tr><td>v1-v3</td><td>0    </td><td>1.4137918496568833</td><td>1.224744871391589</td><td>0          </td><td>0     </td></tr>
+<tr><td>v1-v4</td><td>0    </td><td>1.412399304329974 </td><td>1.224744871391589</td><td>2          </td><td>0     </td></tr>
+<tr><td>v2-v3</td><td>0    </td><td>1.4138219761652913</td><td>1.224744871391589</td><td>0          </td><td>0     </td></tr>
+<tr><td>v2-v4</td><td>0    </td><td>1.4125289714685838</td><td>1.224744871391589</td><td>2          </td><td>0     </td></tr>
+<tr><td>v3-v4</td><td>0    </td><td>1.412568170818422 </td><td>1.224744871391589</td><td>2          </td><td>0     </td></tr>
+</tbody>
+</table>
+
+<h3 id="jarak-binary">Jarak Binary</h3>
+<pre><code class="python">display(Image(filename=&quot;d7.PNG&quot;))
+display(Image(filename=&quot;d8.PNG&quot;))
+</code></pre>
+
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_22_0.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_22_1.png" /></p>
+<pre><code class="python">def binaryDist(v1,v2,jnis):
+    q=0
+    r=0
+    s=0
+    t=0
+    for x in range (len(jnis)):
+        if (int(a.values.tolist()[v1][jnis[x]]))==1 and (int(a.values.tolist()[v2][jnis[x]]))==1:
+            q=q+1
+        elif (int(a.values.tolist()[v1][jnis[x]]))==1 and (int(a.values.tolist()[v2][jnis[x]]))==2:
+            r=r+1
+        elif (int(a.values.tolist()[v1][jnis[x]]))==2 and (int(a.values.tolist()[v2][jnis[x]]))==1:
+            s=s+1
+        else:
+            t=t+1
+    return ((r+s)/(q+r+s+t))
+</code></pre>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Ordinal&quot;]+[&quot;Categorical&quot;]+[&quot;Binary&quot;],
+    [&quot;v1-v2&quot;]+[0]+[chordDist(0,1,num)]+[ordDist(0,1,ordinal)]+[categoricalDist(0,1,categorical)]+[binaryDist(0,1,binary)],
+    [&quot;v1-v3&quot;]+[0]+[chordDist(0,2,num)]+[ordDist(0,2,ordinal)]+[categoricalDist(0,2,categorical)]+[binaryDist(0,2,binary)],
+    [&quot;v1-v4&quot;]+[0]+[chordDist(0,3,num)]+[ordDist(0,3,ordinal)]+[categoricalDist(0,3,categorical)]+[binaryDist(0,3,binary)],
+    [&quot;v2-v3&quot;]+[0]+[chordDist(1,2,num)]+[ordDist(1,2,ordinal)]+[categoricalDist(1,2,categorical)]+[binaryDist(1,2,binary)],
+    [&quot;v2-v4&quot;]+[0]+[chordDist(1,3,num)]+[ordDist(1,3,ordinal)]+[categoricalDist(1,3,categorical)]+[binaryDist(1,3,binary)],
+    [&quot;v3-v4&quot;]+[0]+[chordDist(2,3,num)]+[ordDist(2,3,ordinal)]+[categoricalDist(2,3,categorical)]+[binaryDist(2,3,binary)],
+    ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>Data </td><td>Jarak</td><td>Numeric           </td><td>Ordinal          </td><td>Categorical</td><td>Binary</td></tr>
+<tr><td>v1-v2</td><td>0    </td><td>1.413781807344754 </td><td>1.224744871391589</td><td>0          </td><td>0.0   </td></tr>
+<tr><td>v1-v3</td><td>0    </td><td>1.4137918496568833</td><td>1.224744871391589</td><td>0          </td><td>0.0   </td></tr>
+<tr><td>v1-v4</td><td>0    </td><td>1.412399304329974 </td><td>1.224744871391589</td><td>2          </td><td>0.0   </td></tr>
+<tr><td>v2-v3</td><td>0    </td><td>1.4138219761652913</td><td>1.224744871391589</td><td>0          </td><td>0.0   </td></tr>
+<tr><td>v2-v4</td><td>0    </td><td>1.4125289714685838</td><td>1.224744871391589</td><td>2          </td><td>0.0   </td></tr>
+<tr><td>v3-v4</td><td>0    </td><td>1.412568170818422 </td><td>1.224744871391589</td><td>2          </td><td>0.0   </td></tr>
+</tbody>
+</table>
+
+<h3 id="jarak-campuran">Jarak Campuran</h3>
+<pre><code class="python">display(Image(filename=&quot;d14.PNG&quot;))
+display(Image(filename=&quot;d15.PNG&quot;))
+</code></pre>
+
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_26_0.png" /></p>
+<p><img alt="png" src="../DataMiningTg2_files/DataMiningTg2_26_1.png" /></p>
+<h3 id="pada-data-yang-saya-ambil-tidak-memiliki-missing-value-sehingga-nilai-delta-1">Pada Data yang saya ambil tidak memiliki missing value sehingga nilai delta = 1</h3>
+<h4 id="jarak-jumlah-jarak-setiap-jenisjumlah-jenis">Jarak = Jumlah Jarak setiap jenis/Jumlah Jenis</h4>
+<pre><code class="python">def jarak(v1,v2):
+    return ((chordDist(v1,v2,num)+ordDist(v1,v2,ordinal)+categoricalDist(v1,v2,categorical)+binaryDist(v1,v2,binary))/4)
+</code></pre>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Ordinal&quot;]+[&quot;Categorical&quot;]+[&quot;Binary&quot;],
+    [&quot;v1-v2&quot;]+[&quot;{:.2f}&quot;.format(jarak(0,1))]+[&quot;{:.2f}&quot;.format(chordDist(0,1,num))]+[&quot;{:.2f}&quot;.format(ordDist(0,1,ordinal))]+[categoricalDist(0,1,categorical)]+[binaryDist(0,1,binary)],
+    [&quot;v1-v3&quot;]+[&quot;{:.2f}&quot;.format(jarak(0,2))]+[&quot;{:.2f}&quot;.format(chordDist(0,2,num))]+[&quot;{:.2f}&quot;.format(ordDist(0,2,ordinal))]+[categoricalDist(0,2,categorical)]+[binaryDist(0,2,binary)],
+    [&quot;v1-v4&quot;]+[&quot;{:.2f}&quot;.format(jarak(0,3))]+[&quot;{:.2f}&quot;.format(chordDist(0,3,num))]+[&quot;{:.2f}&quot;.format(ordDist(0,3,ordinal))]+[categoricalDist(0,3,categorical)]+[binaryDist(0,3,binary)],
+    [&quot;v2-v3&quot;]+[&quot;{:.2f}&quot;.format(jarak(1,2))]+[&quot;{:.2f}&quot;.format(chordDist(1,2,num))]+[&quot;{:.2f}&quot;.format(ordDist(1,2,ordinal))]+[categoricalDist(1,2,categorical)]+[binaryDist(1,2,binary)],
+    [&quot;v2-v4&quot;]+[&quot;{:.2f}&quot;.format(jarak(1,3))]+[&quot;{:.2f}&quot;.format(chordDist(1,3,num))]+[&quot;{:.2f}&quot;.format(ordDist(1,3,ordinal))]+[categoricalDist(1,3,categorical)]+[binaryDist(1,3,binary)],
+    [&quot;v3-v4&quot;]+[&quot;{:.2f}&quot;.format(jarak(2,3))]+[&quot;{:.2f}&quot;.format(chordDist(2,3,num))]+[&quot;{:.2f}&quot;.format(ordDist(2,3,ordinal))]+[categoricalDist(2,3,categorical)]+[binaryDist(2,3,binary)],
+    ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>Data </td><td>Jarak</td><td>Numeric</td><td>Ordinal</td><td>Categorical</td><td>Binary</td></tr>
+<tr><td>v1-v2</td><td>0.66 </td><td>1.41   </td><td>1.22   </td><td>0          </td><td>0.0   </td></tr>
+<tr><td>v1-v3</td><td>0.66 </td><td>1.41   </td><td>1.22   </td><td>0          </td><td>0.0   </td></tr>
+<tr><td>v1-v4</td><td>1.16 </td><td>1.41   </td><td>1.22   </td><td>2          </td><td>0.0   </td></tr>
+<tr><td>v2-v3</td><td>0.66 </td><td>1.41   </td><td>1.22   </td><td>0          </td><td>0.0   </td></tr>
+<tr><td>v2-v4</td><td>1.16 </td><td>1.41   </td><td>1.22   </td><td>2          </td><td>0.0   </td></tr>
+<tr><td>v3-v4</td><td>1.16 </td><td>1.41   </td><td>1.22   </td><td>2          </td><td>0.0   </td></tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../DataMiningTg3/" title="Tugas 3" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Tugas 3
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
